@@ -3,6 +3,8 @@ name: theory
 description: Explain code through the lens of Naur's "Programming as Theory Building" — deliver the theory, not a behavioral narration. Use when the user says "explain this in non-code terms", "what's the theory here", or invokes /theory explicitly.
 ---
 
+*From: canon/languages/naur_programming_as_theory_building.md.*
+
 Do not restate what the code does. The code is already readable; restatement is noise.
 
 **Scope**: only use code that has already been read or discussed in the current conversation. Do not re-open files.

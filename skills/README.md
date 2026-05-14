@@ -12,7 +12,13 @@ skill 分两类：
 
 ## lens
 
-- **theory** · 用 Naur《Programming as Theory Building》三标准解释代码——现实↔代码的对应、为什么是这样而不是别样、修改的"顺纹/逆纹" · 触发：`/theory`、"explain this in non-code terms"、"what's the theory here" · scope：只用已在上下文中的代码，不重新打开文件 · from: `canon/languages/naur_programming_as_theory_building.md`
+- **theory** — 用 Naur 三标准解释代码（现实↔代码 / 为何如此 / 修改顺纹逆纹）
+- **predict** — 读不熟悉的代码前先猜，读后对照差异
+- **metaphor** — 一句"像 ___"逼出系统的形，看哪个模块塞不进去
+- **negative-space** — 这段代码刻意不做什么
+- **counterfactual** — 换成 X 会先在哪里崩
+
+> `predict` / `metaphor` / `negative-space` / `counterfactual` 抽取自 `code-theory-reconstruction` 的 move set；大 skill 内部目前未动，留待这套 lens 试用稳定后再考虑改造为编排体。每个 lens 的源头标在自己 SKILL.md 顶部。
 
 ---
 
