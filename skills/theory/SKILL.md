@@ -1,27 +1,45 @@
 ---
 name: theory
-description: Explain code through the lens of Naur's "Programming as Theory Building" — deliver the theory, not a behavioral narration. Use when the user says "explain this in non-code terms", "what's the theory here", or invokes /theory explicitly.
+description: Explain what's behind code — the understanding that lived in the author's head but doesn't show in the code itself. Inspired by Naur's "Programming as Theory Building". Use when the user says "explain this in non-code terms", "what's the theory here", "这段代码背后的东西是什么", or invokes /theory explicitly. Works only from code already read in this conversation; does not explore the codebase.
 ---
 
-Do not restate what the code does. The code is already readable; restatement is noise.
+Always output in Chinese (中文).
 
-**Scope**: only use code that has already been read or discussed in the current conversation. Do not re-open files.
+The goal: give the user what the code alone cannot — the understanding in the
+author's head. Naur called this the program's theory. Use his idea as a
+compass, not a template: the list below is what counts as "behind the code",
+not a form to fill in. Organize the answer however this particular code
+demands; lead with whatever matters most here.
 
-Deliver against Naur's three criteria. Cover one only if there is something real to say; if not, skip it and state why.
+Do not restate what the code does. The code is already readable; restatement
+is noise.
 
-**1. Real-world ↔ code mapping**
-- What real-world affair, activity, or constraint does this code correspond to?
-- What aspects of the world are deliberately excluded — outside the scope of what this code cares about?
+**Scope**: only use code already read or discussed in this conversation. Do
+not re-open source files. Exception: git history (`git log`, `git blame`) is
+allowed — commit messages are the author's recorded intent.
 
-**2. Why it is this way, and not otherwise**
-- The reasoning behind the key design choices — not "it does X", but "why X rather than Y"
-- The places that look strange or roundabout, and the off-page constraint they are actually responding to
+**What counts as "behind the code"** — pick what's real for this code, skip
+the rest:
 
-**3. The "naturalness" of modifications**
-- Which kinds of changes extend along the grain of this structure (natural extensions)
-- Which kinds of changes are technically feasible but would become grafted-on patches, breaking the internal coherence
+- The real-world affair or constraint the code answers to, and what it
+  deliberately ignores.
+- Why it is this way and not another — especially the strange or roundabout
+  places, and the off-page constraint behind them.
+- The load-bearing assumptions nobody wrote down.
+- What the structure is preparing for: which future changes it welcomes,
+  which it would resist. Concrete examples, specific to this code.
+- Where it came from: the earlier shape it grew out of, the scars left by
+  past decisions.
 
-**Boundary of the theory (must be marked explicitly)**
-Whatever belongs to "obtainable only through long participation in the project, or collaboration with the original author" must be flagged. Do not pretend to hold the full theory. Example: "I can't see what the original author was actually weighing here — this is the kind of thing only someone living inside this project can tell you."
+**Honesty**:
 
-Expand where expansion is needed — do not omit important detail in the name of brevity. The theory is already hard to articulate; better to say more than to compress a key trade-off, constraint, or similarity-judgment into an empty sentence.
+- Mark each claim about the author's reasoning: backed by evidence (comments,
+  commits, structure), inferred from constraints, or your own guess. Don't
+  state a guess in the tone of a fact.
+- Mark the gaps, in two kinds. Closable: knowable by reading more of the
+  repo — name the file. Theory boundary: only the original author could
+  answer; say so plainly.
+
+Expand where needed — on trade-offs, constraints, and judgment calls, never
+on restatement. Better to say more than to flatten a key decision into one
+empty sentence.
