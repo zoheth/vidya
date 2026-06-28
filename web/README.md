@@ -21,7 +21,7 @@ npm run preview  # 本地预览构建结果
 
 ## 部署
 
-推到 `master` 后由 `.github/workflows/deploy.yml` 自动构建并发布到 GitHub Pages。
+推送到 `master` 后由 `.github/workflows/deploy.yml` 自动构建并发布到 GitHub Pages。
 
 首次启用：在 GitHub 仓库 Settings → Pages 把 Source 设为 "GitHub Actions"。
 
